@@ -4,10 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style_produtos.css">
+    <script src="https://kit.fontawesome.com/7d8c9004fe.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Sedan:ital@0;1&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
     <title>Produtos</title>
 </head>
 <body>
     <header></header>
+
+    <main id="principal">
+        <div id="frutas">
+            <div>
+                <h1>Frutas</h1>
+            </div>
+            <div id="cards_frutas">
+                <script>
+                    const frutas = [{
+                        "id":1,
+                        "nome":"banana",
+                        "imagem":"./imagens/banana_nanica.jpg",
+                        "valor":7,
+                        "descricao":"Banana nanica",
+                        "categoria":1},
+                        {"id":2,
+                        "nome":"maca",
+                        "imagem":"./imagens/macas.webp",
+                        "valor":7,
+                        "descricao":"Maçã fuji",
+                        "categoria":1}]
+                    
+                card = '';
+
+                for (let i = 0; i<frutas.length; i++){
+                    card += `<div class = 'fruta'>`
+                    card += `<img src = '${frutas[i].imagem}'>`
+                    card += `<p>${frutas[i].descricao}</p>`
+                    card += `<p>${frutas[i].valor}</p>`
+                    card += `<button>Adicionar</button>`
+                    card += `</div>`
+                }
+                document.getElementById('cards_frutas').innerHTML = card;
+                </script>
+            </div>
+        </div>
+        
+        <div id="vegetais">
+
+        </div>
+
+        <div id="hortaliças">
+            <script>
+                const hortaliças = [
+                        {"id":3,
+                        "nome":"alface",
+                        "imagem":"alface.jpg",
+                        "valor":7,"descricao":"Alface crespa",
+                        "categoria":3},
+                        {"id":4,
+                        "nome":"agriao",
+                        "imagem":"agriao.jpg",
+                        "valor":7,
+                        "descricao":"Agrião",
+                        "categoria":3},
+                        {"id":5,
+                        "nome":"alface",
+                        "imagem":"alface.jpg",
+                        "valor":7,
+                        "descricao":"Alface lisa",
+                        "categoria":3}]
+            </script>
+        </div>
+
+        <div id="prod_animal">
+
+        </div>
+    </main>
 
     <footer></footer>
 </body>
