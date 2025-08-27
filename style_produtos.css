@@ -1,0 +1,20 @@
+:root{
+    --titulo:#FFF0BF;
+    --verde-militar: rgba(51, 63, 6, 1);
+    --vermelho-claro: rgba(255, 246, 217, 1);
+    --verde-musgo: #4a5e00;
+    --cinza:rgba(117, 117, 117, 1);
+    --amarelo: rgba(244, 224, 161, 1);
+    --da-roca: "Seaweed Script";
+    --fonte-cursiva: "Marck Script", cursive;
+    --paragrafos: "Sedan", serif;
+}
+
+header, footer{
+    background-color: var(--verde-militar);
+    
+}
+body{
+    background-color: var(--vermelho-claro);
+    margin: 0%;
+}
