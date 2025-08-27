@@ -12,9 +12,10 @@
 
 header, footer{
     background-color: var(--verde-militar);
-    
+    min-height: 20px;
 }
 body{
     background-color: var(--vermelho-claro);
     margin: 0%;
 }
+
