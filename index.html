@@ -96,39 +96,27 @@
             </div>
         </div>
         <div class="linha"></div>
-        <div id="categorias">
+        <div id="produtos">
             <h1>Conheça alguns de nossos produtos</h1>
-            <div id="cards_categorias">
-                <script>
-                    const imagens = [{
-                        imagem: "./imagens/macas.webp",
-                        nome: "Frutas"
-                    },
-                    {
-                        imagem: "./imagens/vegetables.webp",
-                        nome: "Vegetais"
-                    },{
-                        imagem: "./imagens/salada.jpg",
-                        nome: "Hortaliças"
-                    },
-                    {
-                        imagem: "./imagens/leite.jpg",
-                        nome: "Produtos de origem animal"
-                    },]
-
-                    card='';
-                    for (let i = 0; i<imagens.length; i++){
-                        card += `<div class='cards'>`
-                        card += `<img src='${imagens[i].imagem}'>`
-                        card += `<p>${imagens[i].nome}</p>`
-                        card += `<button> Ver mais </button>`
-                        card += `</div>`
-                    }
-                    document.getElementById('cards_categorias').innerHTML = card;
-                </script>
-            </div>
-            <div><a href="produtos.html" id="ver_todos">Ver todos</a></div>
+            <p>Descubra nossos deliciosos produtos orgânicos e tenha uma vida mais saudável conosco!</p>
+            <section class="container">
+                <div class="slider-wrapper"> <!--slider-wrapper-->
+                    <div class="slider">   <!--slider-->
+                        <img src="./imagens/frutas_variadas.jpg" alt="Frutas variadas" id="slide1">
+                        <img src="./imagens/vegetais.avif" alt="Vegetais" id="slide2">
+                        <img src="./imagens/salada.jpg" alt="Hortaliças" id="slide3">
+                        <img src="./imagens/leite-queijo.avif" alt="Produtos origem animal" id="slide4">
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#slide1"></a>
+                        <a href="#slide2"></a>
+                        <a href="#slide3"></a>
+                        <a href="#slide4"></a>
+                    </div>
+                </div>
+            </section>
         </div>
+        
     </main>
 
     <footer>
