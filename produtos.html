@@ -38,16 +38,57 @@
                         "imagem":"./imagens/macas.webp",
                         "valor":7,
                         "descricao":"Maçã fuji",
+                        "categoria":1},
+                    {
+                        "id":1,
+                        "nome":"banana",
+                        "imagem":"./imagens/banana_nanica.jpg",
+                        "valor":7,
+                        "descricao":"Banana nanica",
+                        "categoria":1},
+                        {"id":2,
+                        "nome":"maca",
+                        "imagem":"./imagens/macas.webp",
+                        "valor":7,
+                        "descricao":"Maçã fuji",
+                        "categoria":1},
+                    {
+                        "id":1,
+                        "nome":"banana",
+                        "imagem":"./imagens/banana_nanica.jpg",
+                        "valor":7,
+                        "descricao":"Banana nanica",
+                        "categoria":1},
+                        {"id":2,
+                        "nome":"maca",
+                        "imagem":"./imagens/macas.webp",
+                        "valor":7,
+                        "descricao":"Maçã fuji",
+                        "categoria":1},
+                    {
+                        "id":1,
+                        "nome":"banana",
+                        "imagem":"./imagens/banana_nanica.jpg",
+                        "valor":7,
+                        "descricao":"Banana nanica",
+                        "categoria":1},
+                        {"id":2,
+                        "nome":"maca",
+                        "imagem":"./imagens/macas.webp",
+                        "valor":7,
+                        "descricao":"Maçã fuji",
                         "categoria":1}]
                     
                 card = '';
 
                 for (let i = 0; i<frutas.length; i++){
-                    card += `<div class = 'fruta'>`
+                    card += `<div class = 'card'>`
                     card += `<img src = '${frutas[i].imagem}'>`
-                    card += `<p>${frutas[i].descricao}</p>`
-                    card += `<p>${frutas[i].valor}</p>`
-                    card += `<button>Adicionar</button>`
+                    card += `<div>`
+                    card += `<h2>${frutas[i].descricao}</h2>`
+                    card += `<span>${frutas[i].valor}</span>`
+                    card += `<button>Adicionar à sacola</button>`
+                    card += `</div>`
                     card += `</div>`
                 }
                 document.getElementById('cards_frutas').innerHTML = card;
