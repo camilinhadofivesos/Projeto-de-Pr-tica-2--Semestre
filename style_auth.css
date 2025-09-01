@@ -1,0 +1,68 @@
+main {
+  font-family: var(--paragrafos);
+  padding: 30px;
+  color: var(--cinza);
+  max-width: 400px;
+  margin: auto;
+  background-color: var(--vermelho-claro);
+}
+
+h1 {
+  font-family: var(--da-roca);
+  color: var(--verde-musgo);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-auth {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-auth label {
+  font-weight: bold;
+  color: var(--verde-musgo);
+}
+
+.form-auth input {
+  padding: 10px;
+  border: 1px solid var(--cinza);
+  border-radius: 5px;
+  font-family: var(--paragrafos);
+}
+
+.form-auth button {
+  background-color: var(--verde-militar);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--paragrafos);
+}
+
+.form-auth button:hover {
+  background-color: var(--verde-musgo);
+}
+
+.link-extra {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.link-extra a {
+  color: var(--verde-musgo);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-extra a:hover {
+  text-decoration: underline;
+}

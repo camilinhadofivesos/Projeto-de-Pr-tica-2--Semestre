@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comentários / Reclamações / Sugestões</title>
+  <link rel="stylesheet" href="style_comentarios.css">
+</head>
+<body>
+  <header>
+    <h1>Comentários, Reclamações e Sugestões</h1>
+  </header>
+
+  <main>
+    <form class="form-feedback">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+      <label for="tipo">Tipo de mensagem:</label>
+      <select id="tipo" name="tipo">
+        <option value="comentario">Comentário</option>
+        <option value="reclamacao">Reclamação</option>
+        <option value="sugestao">Sugestão</option>
+      </select>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Da Roça - Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>

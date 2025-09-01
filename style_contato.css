@@ -1,0 +1,74 @@
+main {
+  font-family: var(--paragrafos);
+  padding: 30px;
+  color: var(--cinza);
+  max-width: 800px;
+  margin: auto;
+  background-color: var(--vermelho-claro);
+}
+
+h1 {
+  font-family: var(--da-roca);
+  color: var(--verde-musgo);
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.contato-explicacao {
+  background-color: var(--amarelo);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: var(--paragrafos);
+  color: var(--cinza);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  padding: 12px;
+  border: 1px solid var(--cinza);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--paragrafos);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  padding: 12px;
+  background-color: var(--verde-musgo);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 150px;
+  align-self: flex-end;
+  font-family: var(--paragrafos);
+}
+
+button:hover {
+  background-color: var(--verde-militar);
+}
+
+.info-contato {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-family: var(--paragrafos);
+  color: var(--cinza);
+}
+
+.info-contato i {
+  margin-right: 8px;
+}
