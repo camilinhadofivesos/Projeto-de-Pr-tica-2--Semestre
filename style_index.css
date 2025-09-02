@@ -96,6 +96,9 @@ li:hover #categorias_produtos{
     border: var(--verde-militar);
 }
 
+.btn_menu:hover{
+    cursor: pointer;
+}
 
 .menu>.icon{
     padding: 5px;
@@ -121,6 +124,11 @@ li:hover #categorias_produtos{
     border-color: var(--vermelho-claro);
     border-radius: 5px;
     border: 1px solid;
+}
+
+#criarConta , #Entrar:hover{
+    cursor: pointer;
+    
 }
 
 #apresentacao{

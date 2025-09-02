@@ -16,16 +16,11 @@ body {
   color: var(--verde-musgo);
 }
 
-header, footer {
+header{
   background-color: var(--verde-militar);
   color: var(--vermelho-claro);
   text-align: center;
   padding: 15px;
-}
-
-h1 {
-  font-family: var(--fonte-cursiva);
-  margin: 0;
 }
 
 main {
