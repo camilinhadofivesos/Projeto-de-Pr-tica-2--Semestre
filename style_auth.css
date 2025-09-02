@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Marck+Script&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
+
+
 main {
   font-family: var(--paragrafos);
   padding: 30px;
@@ -8,7 +13,7 @@ main {
 }
 
 h1 {
-  font-family: var(--da-roca);
+  font-family: var(--fonte-cursiva);
   color: var(--verde-musgo);
   text-align: center;
   margin-bottom: 20px;
@@ -65,4 +70,21 @@ h1 {
 
 .link-extra a:hover {
   text-decoration: underline;
+}
+
+.daRoca{
+    width: 50px;
+    margin: 5px;
+}
+
+.logo{
+    display: flex;
+    font-family: Seaweed Script;
+    color: var(--titulo);
+    flex-wrap: wrap;
+    font-size: 18px;
+}
+
+#vazio{
+  height: 188px;
 }
