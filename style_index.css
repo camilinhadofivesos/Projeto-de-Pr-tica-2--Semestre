@@ -40,7 +40,7 @@ body{
 .logo{
     display: flex;
     font-family: Seaweed Script;
-    color: var(--titulo);
+    color: var(--vermelho-claro);
     flex-wrap: wrap;
     font-size: 18px;
 }
@@ -104,6 +104,10 @@ li:hover #categorias_produtos{
     padding: 5px;
     margin: 20px 5px;
     color: var(--vermelho-claro);
+}
+
+.menu>.icon :hover{
+    cursor: pointer;
 }
 
 #criarConta{

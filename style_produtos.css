@@ -53,7 +53,7 @@ main{
     height: 380px;
     margin: 10px;
     border-radius: 12px;
-    box-shadow: 4px 4px 4px gray;
+    box-shadow: 2px 2px 2px gray;
     flex-shrink: 0;
 }
 
@@ -81,7 +81,7 @@ main{
     font-family: var(--paragrafos);
     font-size: medium;
     margin: 8px auto;
-    box-shadow: 4px 4px 4px gray;
+    box-shadow: 3px 3px 3px gray;
 }
 
 .cards_container{
@@ -105,11 +105,13 @@ main{
     border: none;
 }
 
-.caixa_slides{
+.caixa_slides, .caixa_slides2{
     overflow: hidden;
     flex: 1;
-    overflow-x: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
+
 
 #frutas, #hortalicas{
     margin: 20px;

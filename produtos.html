@@ -18,42 +18,7 @@
     <title>Produtos - Da Roça</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="./imagens/frutas.png" height="100" width="150">
-            <h1 class="daRoca">Da Roça</h1>
-        </div>
-        <nav>
-            <ul class="menu">
-                <li><button class="btn_menu" onclick="window.location.href = 'index.html'">Início</button></li>
-                <li>
-                    <button class="btn_menu" onclick="window.location.href = 'produtos.html'">Produtos</button>
-                        <div id="categorias_produtos">
-                            <a href="produtos.html#frutas" class="link_categorias">Frutas</a>
-                            <a href="#" class="link_categorias">Legumes</a>
-                            <a href="#" class="link_categorias">Verduras</a>
-                            <a href="produtos.html#hortalicas" class="link_categorias">Hortaliças</a>
-                        </div>
-                </li>
-                <li><button class="btn_menu" onclick="window.location.href = './comentarios.html'">Comentários</button></li>
-                <li><button class="btn_menu" onclick="window.location.href = './contato.html'">Contato</button></li>
-                <li><button class="btn_menu" onclick="window.location.href = 'assinatura.html'">Assinatura</button></li>
-            </ul>
-        </nav>
-        
-        <div id="icones">
-            <ul class="menu">
-                <li class="icon"><i class="fa-regular fa-heart"></i></li>
-                <li class="icon"><i class="fa-solid fa-cart-shopping"></i></li>
-                <li class="icon"><i class="fa-solid fa-magnifying-glass"></i></li>
-            </ul>
-        </div>
-        
-        <div id="botoes">
-            <button id="criarConta" onclick="window.location.href = 'cadastro.html'">Criar conta</button>
-            <button id="Entrar" onclick="window.location.href = 'login.html'">Entrar</button>
-        </div>
-    </header>
+    <header id="cab"></header>
 
     <main id="principal">
         <div id="frutas">
@@ -61,11 +26,11 @@
                 <h1 id="titulo_frutas">Frutas</h1>
             </div>
             <section class="container">
-                <button onclick="carrossel();" class="btn-esq">&larr;</button>
+                <button onclick="carrossel('esq', '.caixa_slides');" class="btn-esq">&larr;</button>
                 <div class="caixa_slides">
                         <div id="cards_frutas" class="cards_container"></div>
                 </div>
-                <button onclick="carrossel();" class="btn-dir">&rarr;</button>
+                <button onclick="carrossel('dir', '.caixa_slides');" class="btn-dir">&rarr;</button>
             </section>
         </div>
 
@@ -80,11 +45,11 @@
                 <h1 id="titulo_hort">Hortaliças</h1>
             </div>
             <section class="container">
-                <button onclick="carrossel();" class="btn-esq">&larr;</button>
-                <div class="caixa_slides">
+                <button onclick="carrossel('esq', '.caixa_slides2');" class="btn-esq">&larr;</button>
+                <div class="caixa_slides2">
                         <div id="cards_hortalicas" class="cards_container"></div>
                 </div>
-                <button onclick="carrossel();" class="btn-dir">&rarr;</button>
+            <button onclick="carrossel('dir', '.caixa_slides2');" class="btn-dir">&rarr;</button>
             </section>
         </div>
             
@@ -93,22 +58,8 @@
 
         </div>
     </main>
-<script src="./produtos.js"></script>
-
-    <footer>
-        <div class="logo">
-            <img src="./imagens/frutas.png" height="100" width="150">
-            <h1 class="daRoca">Da Roça</h1>
-        </div>
-        <div id="copyright">
-            <p>	&copy;2025 | DaRoca | All Rights Reserved</p>
-        </div>
-        <div id="icons_footer">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-x-twitter"></i>
-            <i class="fa-brands fa-youtube"></i>
-        </div>
-    </footer>
+    <footer id="rod"></footer>
+    <script src="./produtos.js"></script>
+    <script src="./base.js"></script>
 </body>
 </html>
