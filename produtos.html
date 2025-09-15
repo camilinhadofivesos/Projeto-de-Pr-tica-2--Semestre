@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_produtos.css">
+    <link rel="stylesheet" href="style_index.css">
+    <script src="https://kit.fontawesome.com/7d8c9004fe.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Sedan:ital@0;1&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+    <title>Produtos - Da Roça</title>
+</head>
+<body>
+    <header id="cab"></header>
+
+    <main id="principal">
+        <div id="frutas">
+            <div>
+                <h1 id="titulo_frutas">Frutas</h1>
+            </div>
+            <section class="container">
+                <button onclick="carrossel('esq', '.caixa_slides');" class="btn-esq">&larr;</button>
+                <div class="caixa_slides">
+                        <div id="cards_frutas" class="cards_container"></div>
+                </div>
+                <button onclick="carrossel('dir', '.caixa_slides');" class="btn-dir">&rarr;</button>
+            </section>
+        </div>
+
+        <div id="vegetais">
+            <!--<div>
+                <h1>Vegetais</h1>
+            </div>
+        </div>-->
+
+        <div id="hortalicas" >
+            <div>
+                <h1 id="titulo_hort">Hortaliças</h1>
+            </div>
+            <section class="container">
+                <button onclick="carrossel('esq', '.caixa_slides2');" class="btn-esq">&larr;</button>
+                <div class="caixa_slides2">
+                        <div id="cards_hortalicas" class="cards_container"></div>
+                </div>
+            <button onclick="carrossel('dir', '.caixa_slides2');" class="btn-dir">&rarr;</button>
+            </section>
+        </div>
+            
+
+        <div id="prod_animal">
+
+        </div>
+    </main>
+    <footer id="rod"></footer>
+    <script src="./produtos.js"></script>
+    <script src="./base.js"></script>
+</body>
+</html>
