@@ -1,0 +1,72 @@
+:root {
+  --titulo: #FFF0BF;
+  --verde-militar: rgba(51, 63, 6, 1);
+  --vermelho-claro: rgba(255, 246, 217, 1);
+  --verde-musgo: #4a5e00;
+  --cinza: rgba(117, 117, 117, 1);
+  --amarelo: rgba(244, 224, 161, 1);
+  --fonte-cursiva: "Marck Script", cursive;
+  --paragrafos: "Sedan", serif;
+}
+
+body {
+  background-color: var(--vermelho-claro);
+  margin: 0;
+  font-family: var(--paragrafos);
+  color: var(--verde-musgo);
+}
+
+header{
+  background-color: var(--verde-militar);
+  color: var(--vermelho-claro);
+  text-align: center;
+  padding: 15px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  
+}
+
+.form-feedback {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-feedback label {
+  font-weight: bold;
+  color: var(--verde-musgo);
+}
+
+.form-feedback input,
+.form-feedback select,
+.form-feedback textarea {
+  padding: 10px;
+  border: 1px solid var(--cinza);
+  border-radius: 5px;
+  font-family: var(--paragrafos);
+}
+
+.form-feedback button {
+  background-color: var(--verde-militar);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: var(--paragrafos);
+}
+
+.form-feedback button:hover {
+  background-color: var(--verde-musgo);
+}
