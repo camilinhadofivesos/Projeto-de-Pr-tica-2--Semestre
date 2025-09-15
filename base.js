@@ -15,3 +15,11 @@ let cabecalho = document.getElementById('cab');
             .then( arquivo => {
                 rodape.innerHTML = arquivo;
             })
+
+function buscar(){
+    let input = document.getElementById('campoBusca');
+
+    //mostrar a ferramenta de busca
+    input.style.display = 'block'
+    
+}

@@ -73,6 +73,7 @@ header{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 10px;
+    text-align: start;
 }
 
 li:hover #categorias_produtos{
@@ -87,6 +88,11 @@ li:hover #categorias_produtos{
     padding: 10px;
 }
 
+.link_categorias:hover{
+    background-color: var(--verde-musgo);
+    color: var(--vermelho-claro);
+}
+
 .btn_menu{
     padding: 10px;
     font-family: Sedan;
@@ -98,16 +104,25 @@ li:hover #categorias_produtos{
 
 .btn_menu:hover{
     cursor: pointer;
+    color: var(--cinza);
 }
 
 .menu>.icon{
     padding: 5px;
     margin: 20px 5px;
+}
+
+.icon a {
     color: var(--vermelho-claro);
 }
 
 .menu>.icon :hover{
     cursor: pointer;
+    color: var(--cinza);
+}
+
+#campoBusca{
+    display: none;
 }
 
 #criarConta{
@@ -130,9 +145,10 @@ li:hover #categorias_produtos{
     border: 1px solid;
 }
 
-#criarConta , #Entrar:hover{
+#criarConta:hover , #Entrar:hover{
     cursor: pointer;
-    
+    background-color: var(--amarelo);
+    color: var(--verde-musgo);
 }
 
 #apresentacao{

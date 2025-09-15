@@ -7,7 +7,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -20,7 +20,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -33,7 +33,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -46,7 +46,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -59,7 +59,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1}]
@@ -68,7 +68,7 @@ const hortaliças = [
     {
         "id": 3,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface crespa",
         "categoria": 3
@@ -76,7 +76,7 @@ const hortaliças = [
     {
         "id": 4,
         "nome": "agriao",
-        "imagem": "agriao.jpg",
+        "imagem": "./imagens/agriao.jpg",
         "valor": 7,
         "descricao": "Agrião",
         "categoria": 3
@@ -84,7 +84,7 @@ const hortaliças = [
     {
         "id": 5,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface lisa",
         "categoria": 3
@@ -92,7 +92,7 @@ const hortaliças = [
     {
         "id": 5,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface lisa",
         "categoria": 3
@@ -100,7 +100,7 @@ const hortaliças = [
     {
         "id": 5,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface lisa",
         "categoria": 3
@@ -108,7 +108,7 @@ const hortaliças = [
     {
         "id": 5,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface lisa",
         "categoria": 3
@@ -116,7 +116,7 @@ const hortaliças = [
     {
         "id": 5,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface lisa",
         "categoria": 3
@@ -124,7 +124,7 @@ const hortaliças = [
     {
         "id": 5,
         "nome": "alface",
-        "imagem": "alface.jpg",
+        "imagem": "./imagens/alface_lisa.jpg",
         "valor": 7,
         "descricao": "Alface lisa",
         "categoria": 3
@@ -150,7 +150,7 @@ card = '';
 
 function carrossel(direcao, nomeDaClasse){
     let caixa = document.querySelector(nomeDaClasse)
-    let largura = 260;
+    let largura = 1300;
     
     if (direcao === 'esq'){
         caixa.scrollLeft -= largura;
