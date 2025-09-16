@@ -7,7 +7,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -20,7 +20,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -33,7 +33,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -46,7 +46,7 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1},
@@ -59,30 +59,77 @@ const frutas = [{
                         "categoria":1},
                         {"id":2,
                         "nome":"maca",
-                        "imagem":"./imagens/macas.webp",
+                        "imagem":"./imagens/maca_fuji.jpg",
                         "valor":7,
                         "descricao":"Maçã fuji",
                         "categoria":1}]
 
 const hortaliças = [
-                        {"id":3,
-                        "nome":"alface",
-                        "imagem":"alface.jpg",
-                        "valor":7,
-                        "descricao":"Alface crespa",
-                        "categoria":3},
-                        {"id":4,
-                        "nome":"agriao",
-                        "imagem":"agriao.jpg",
-                        "valor":7,
-                        "descricao":"Agrião",
-                        "categoria":3},
-                        {"id":5,
-                        "nome":"alface",
-                        "imagem":"alface.jpg",
-                        "valor":7,
-                        "descricao":"Alface lisa",
-                        "categoria":3}]
+    {
+        "id": 3,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface crespa",
+        "categoria": 3
+    },
+    {
+        "id": 4,
+        "nome": "agriao",
+        "imagem": "./imagens/agriao.jpg",
+        "valor": 7,
+        "descricao": "Agrião",
+        "categoria": 3
+    },
+    {
+        "id": 5,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface lisa",
+        "categoria": 3
+    },
+    {
+        "id": 5,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface lisa",
+        "categoria": 3
+    },
+    {
+        "id": 5,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface lisa",
+        "categoria": 3
+    },
+    {
+        "id": 5,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface lisa",
+        "categoria": 3
+    },
+    {
+        "id": 5,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface lisa",
+        "categoria": 3
+    },
+    {
+        "id": 5,
+        "nome": "alface",
+        "imagem": "./imagens/alface_lisa.jpg",
+        "valor": 7,
+        "descricao": "Alface lisa",
+        "categoria": 3
+    }
+];
 
                         
 function gerarCards(idDiv,lista){
@@ -101,10 +148,21 @@ card = '';
     document.getElementById(idDiv).innerHTML = card;
 }
 
-
-function carrossel(idSec){
+function carrossel(direcao, nomeDaClasse){
+    let caixa = document.querySelector(nomeDaClasse)
+    let largura = 1300;
     
+    if (direcao === 'esq'){
+        caixa.scrollLeft -= largura;
+    }
+    else{
+        if(direcao === 'dir'){
+            caixa.scrollLeft += largura;
+        }
+    }
 }
+
+
 gerarCards("cards_frutas", frutas)
 gerarCards("cards_hortalicas", hortaliças)
 

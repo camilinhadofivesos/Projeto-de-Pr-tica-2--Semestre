@@ -1,0 +1,38 @@
+<div class="logo">
+            <img src="./imagens/frutas.png" height="100" width="150">
+            <h1 class="daRoca">Da Roça</h1>
+        </div>
+        
+        <nav>
+            <ul class="menu">
+                <li><button class="btn_menu" onclick="window.location.href = 'index.html'">Início</button></li>
+                <li>
+                    <button class="btn_menu">Produtos</button>
+                        <div id="categorias_produtos">
+                            <a href="produtos.html#frutas" class="link_categorias">Frutas</a>
+                            <a href="#" class="link_categorias">Legumes</a>
+                            <a href="#" class="link_categorias">Verduras</a>
+                            <a href="produtos.html#hortalicas" class="link_categorias">Hortaliças</a>
+                        </div>
+                </li>
+                <li><button class="btn_menu" onclick="window.location.href = './comentarios.html'">Comentários</button></li>
+                <li><button class="btn_menu" onclick="window.location.href = './contato.html'">Contato</button></li>
+                <li><button class="btn_menu" onclick="window.location.href = 'assinatura.html'">Assinatura</button></li>
+            </ul>
+        </nav>
+        
+        <div id="icones">
+            <ul class="menu">
+                <li class="icon"><a href="#"><i class="fa-regular fa-heart"></i></a></li>
+                <li class="icon"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li class="icon"><a href="#" onclick="buscar()" id="lupa"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                <li class="icon"><input type="text" id="campoBusca" placeholder="Buscar..."></li>
+            </ul>
+            
+        </div>
+        
+        <div id="botoes">
+            <button id="criarConta" onclick="window.location.href = 'cadastro.html'">Criar conta</button>
+            <button id="Entrar" onclick="window.location.href = 'login.html'">Entrar</button>
+        </div>
+</div>

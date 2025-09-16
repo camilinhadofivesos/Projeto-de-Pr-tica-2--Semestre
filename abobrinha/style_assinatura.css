@@ -3,7 +3,7 @@ main {
   padding: 30px;
   color: var(--cinza);
   max-width: 1000px;
-  margin: auto;
+  margin: 3% auto;
   text-align: center;
   background-color: var(--vermelho-claro);
 }
