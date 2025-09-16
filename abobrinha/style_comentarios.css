@@ -14,9 +14,10 @@ body {
   margin: 0;
   font-family: var(--paragrafos);
   color: var(--verde-musgo);
+  text-align: center;
 }
 
-header{
+header {
   background-color: var(--verde-militar);
   color: var(--vermelho-claro);
   text-align: center;
@@ -25,11 +26,31 @@ header{
 
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding: 30px;
-  
+  gap: 2rem;
 }
 
+/* ===== Banner de instrução ===== */
+.banner-comentarios {
+  background-color: var(--amarelo);
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  max-width: 800px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--verde-musgo);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-family: var(--paragrafos);
+}
+
+.banner-comentarios .emoji {
+  margin-left: 8px;
+  font-size: 1.3rem;
+}
+
+/* ===== Formulário ===== */
 .form-feedback {
   background: white;
   padding: 25px;
@@ -65,6 +86,7 @@ main {
   cursor: pointer;
   font-size: 1rem;
   font-family: var(--paragrafos);
+  transition: background-color 0.3s ease;
 }
 
 .form-feedback button:hover {
