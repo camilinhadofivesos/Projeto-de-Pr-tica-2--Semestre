@@ -1,6 +1,8 @@
+// api-daroca/index.js
+require('dotenv').config();
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
@@ -11,14 +13,12 @@ const usuariosRoutes = require("./routes/usuarios");
 // Rotas novas
 const comentariosRoutes = require("./routes/comentarios");
 const contatoRoutes = require("./routes/contato");
-const assinaturasRoutes = require("./routes/assinaturas");
 
-// Usar as rotas
-app.use("/clientes", clientesRoutes);
-app.use("/usuarios", usuariosRoutes);
-app.use("/comentarios", comentariosRoutes);
-app.use("/contato", contatoRoutes);
-app.use("/assinaturas", assinaturasRoutes);
+// Usar as rotas com prefixo "/api"
+app.use("/api/clientes", clientesRoutes);
+app.use("/api/usuarios", usuariosRoutes);
+app.use("/api/comentarios", comentariosRoutes);
+app.use("/api/contato", contatoRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor funcionando!");
