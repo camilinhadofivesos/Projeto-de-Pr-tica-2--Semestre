@@ -1,151 +1,17 @@
-const frutas = [{
-                        "id":1,
-                        "nome":"banana",
-                        "imagem":"./imagens/banana_nanica.jpg",
-                        "valor":7,
-                        "descricao":"Banana nanica",
-                        "categoria":1},
-                        {"id":2,
-                        "nome":"maca",
-                        "imagem":"./imagens/maca_fuji.jpg",
-                        "valor":7,
-                        "descricao":"Maçã fuji",
-                        "categoria":1},
-                    {
-                        "id":1,
-                        "nome":"banana",
-                        "imagem":"./imagens/banana_nanica.jpg",
-                        "valor":7,
-                        "descricao":"Banana nanica",
-                        "categoria":1},
-                        {"id":2,
-                        "nome":"maca",
-                        "imagem":"./imagens/maca_fuji.jpg",
-                        "valor":7,
-                        "descricao":"Maçã fuji",
-                        "categoria":1},
-                    {
-                        "id":1,
-                        "nome":"banana",
-                        "imagem":"./imagens/banana_nanica.jpg",
-                        "valor":7,
-                        "descricao":"Banana nanica",
-                        "categoria":1},
-                        {"id":2,
-                        "nome":"maca",
-                        "imagem":"./imagens/maca_fuji.jpg",
-                        "valor":7,
-                        "descricao":"Maçã fuji",
-                        "categoria":1},
-                    {
-                        "id":1,
-                        "nome":"banana",
-                        "imagem":"./imagens/banana_nanica.jpg",
-                        "valor":7,
-                        "descricao":"Banana nanica",
-                        "categoria":1},
-                        {"id":2,
-                        "nome":"maca",
-                        "imagem":"./imagens/maca_fuji.jpg",
-                        "valor":7,
-                        "descricao":"Maçã fuji",
-                        "categoria":1},
-                    {
-                        "id":1,
-                        "nome":"banana",
-                        "imagem":"./imagens/banana_nanica.jpg",
-                        "valor":7,
-                        "descricao":"Banana nanica",
-                        "categoria":1},
-                        {"id":2,
-                        "nome":"maca",
-                        "imagem":"./imagens/maca_fuji.jpg",
-                        "valor":7,
-                        "descricao":"Maçã fuji",
-                        "categoria":1}]
-
-const hortaliças = [
-    {
-        "id": 3,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface crespa",
-        "categoria": 3
-    },
-    {
-        "id": 4,
-        "nome": "agriao",
-        "imagem": "./imagens/agriao.jpg",
-        "valor": 7,
-        "descricao": "Agrião",
-        "categoria": 3
-    },
-    {
-        "id": 5,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface lisa",
-        "categoria": 3
-    },
-    {
-        "id": 5,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface lisa",
-        "categoria": 3
-    },
-    {
-        "id": 5,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface lisa",
-        "categoria": 3
-    },
-    {
-        "id": 5,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface lisa",
-        "categoria": 3
-    },
-    {
-        "id": 5,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface lisa",
-        "categoria": 3
-    },
-    {
-        "id": 5,
-        "nome": "alface",
-        "imagem": "./imagens/alface_lisa.jpg",
-        "valor": 7,
-        "descricao": "Alface lisa",
-        "categoria": 3
-    }
-];
-
-                        
-function gerarCards(idDiv,lista){
-card = '';
-
-    for (let i = 0; i<lista.length; i++){
-        card += `<div class = 'card'>`
-        card += `<img src = '${lista[i].imagem}'>`
-        card += `<div>`
-        card += `<h2>${lista[i].descricao}</h2>`
-        card += `<span>R$${lista[i].valor}</span>`
-        card += `<button>Adicionar à sacola</button>`
-        card += `</div>`
-        card += `</div>`
-    }
-    document.getElementById(idDiv).innerHTML = card;
+async function API(){
+    const url = 'http://localhost:8080/produtos.html#/:categoria&:titulo'
+    let categpria =
+    await fetch(url + categoria)
+        .then(results => results.json())
+        .then(dados => {
+            if(dados.length < 1){
+                document.getElementById('container').innerHTML = 'Produtos não encontrados.'
+            }
+            else{
+                console.log('aqui foi')
+                estrutura(titulo, dados)
+            }
+        })
 }
 
 function carrossel(direcao, nomeDaClasse){
@@ -162,8 +28,29 @@ function carrossel(direcao, nomeDaClasse){
     }
 }
 
+function estrutura(title,lista){
+    let container = document.getElementById('container');
+    container.innerHTML =   `<div id = 'caixa'>
+                        <div id = 'titulo'><h1>${title}</h1></div>
+                    <div>
+                        <div id = 'cards_container'></div>
+                    </div>`;
+    console.log('aqui foi 2')
+    gerarCards('cards_container', lista)
+}
 
-gerarCards("cards_frutas", frutas)
-gerarCards("cards_hortalicas", hortaliças)
-
-    
+function gerarCards(idDiv, lista){
+let card = '';
+    console.log('aqui foi 3')
+    for (let i = 0; i<lista.length; i++){
+        card += `<div class = 'card'>`
+        card += `<img src = '${lista[i].imagem}'>`
+        card += `<div>`
+        card += `<h2>${lista[i].descricao}</h2>`
+        card += `<span>R$${lista[i].valor}</span>`
+        card += `<button>Adicionar à sacola</button>`
+        card += `</div>`
+        card += `</div>`
+    }
+    document.getElementById(idDiv).innerHTML = card;
+}

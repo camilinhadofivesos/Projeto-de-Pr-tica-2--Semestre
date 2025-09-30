@@ -15,19 +15,6 @@ header, footer{
     min-height: 100px;
 }
 
-.daRoca{
-    width: 50px;
-    margin: 5px;
-}
-
-.logo{
-    display: flex;
-    font-family: Seaweed Script;
-    color: var(--titulo);
-    flex-wrap: wrap;
-    font-size: 18px;
-}
-
 body{
     background-color: var(--vermelho-claro);
     margin: 0%;
@@ -36,6 +23,7 @@ body{
 
 main{
     font-family: var(--fonte-cursiva);
+    height: 100%;
 }
 
 .card>img{
@@ -89,38 +77,13 @@ main{
     color: #2c2c2c;
 }
 
-.cards_container{
+#cards_container{
     display: flex;
-    transition: transform 0.5s ease;
-    margin: 0 12px;
-
+    flex-wrap: wrap;
+    margin: auto;
 }
 
-.container{
-    width: 1440px;
-    margin: 20px auto;
-    display: flex;
-    overflow: auto;
-    padding: 5px;
-}
-
-.container > button {
-    background-color: var(--vermelho-claro);
-    color: black;
-    flex-shrink: 0;
-    z-index: 10; 
-    border: none;
-}
-
-.caixa_slides, .caixa_slides2{
-    overflow: hidden;
-    flex: 1;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-
-}
-
-
-#frutas, #hortalicas{
-    margin: 20px;
+#container{
+    margin: auto;
+    width: 80%;
 }

@@ -276,6 +276,11 @@ span{
     font-size: medium;
 }
 
+main{
+    flex: 1;
+    padding: 1rem;
+}
+
 footer{
     background-color: var(--verde-militar);
     color: var(--vermelho-claro);

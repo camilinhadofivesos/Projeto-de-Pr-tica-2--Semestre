@@ -46,7 +46,7 @@ header{
 }
 
 .plano h2 {
-  font-family: var(--fonte-cursiva);
+  font-family: var(--paragrafos);
   color: var(--verde-musgo);
   margin-bottom: 10px;
 }
