@@ -9,10 +9,19 @@
                 <li>
                     <button class="btn_menu">Produtos</button>
                         <div id="categorias_produtos">
-                            <a href= './produtos.html#/categoria=1&titulo=Frutas' class="link_categorias" onclick="API();">Frutas</a>
-                            <a href= './produtos.html#/categoria=2&titulo=Legumes' class="link_categorias" onclick="API();">Legumes</a>
-                            <a href= './produtos.html#/categoria=4&titulo=Verduras' class="link_categorias" onclick="API();">Verduras</a>
-                            <a href= './produtos.html#/categoria=3&titulo=Hortaliças' class="link_categorias" onclick="API();">Hortaliças</a>
+                            <button class="link_categorias" onclick="API(1, 'Frutas'); ">Frutas</button>
+                            <button class="link_categorias" onclick="API(2, 'Legumes');">Legumes</button>
+                            <button class="link_categorias" onclick="API(4, 'Verduras');">Verduras</button>
+                            <button class="link_categorias" onclick="API(3, 'Hortaliças');">Hortaliças</button>
+                            <!--  <div id="categorias_produtos">
+
+                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 1, 'Frutas');">Frutas</a>
+                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 2, 'Legumes');">Legumes</a>
+                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 4, 'Verduras');">Verduras</a>
+                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 3, 'Hortaliças');">Hortaliças</a>
+                            </div> 
+                            
+                            !-->
                         </div>
                 </li>
                 <li><button class="btn_menu" onclick="window.location.href = './comentarios.html'">Comentários</button></li>

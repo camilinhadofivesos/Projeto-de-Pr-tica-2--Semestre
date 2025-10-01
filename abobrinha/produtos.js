@@ -1,18 +1,42 @@
-async function API(){
-    const url = 'http://localhost:8080/produtos.html#/:categoria&:titulo'
-    let categpria =
-    await fetch(url + categoria)
-        .then(results => results.json())
-        .then(dados => {
-            if(dados.length < 1){
-                document.getElementById('container').innerHTML = 'Produtos não encontrados.'
-            }
-            else{
-                console.log('aqui foi')
-                estrutura(titulo, dados)
-            }
-        })
+/*function handleCategoriaClick(event, categoria, titulo) {
+    event.preventDefault();  // Impede a navegação do link
+
+    // Chama a API e espera a resposta
+    API(categoria, titulo).then(() => {
+        // Depois que a API terminar, você pode navegar
+        window.location.href = './produtos.html';
+    });
 }
+
+*/
+
+
+
+
+async function API(categoria, titulo){
+    const url = `http://localhost:8080/produtos/${categoria}`;
+    
+    try {
+        const response = await fetch(url);
+       
+         if (!response.ok) {
+            throw new Error(`Erro na resposta da API: ${response.statusText}`);
+        }
+        console.log(response)
+        const dados = await response.json();
+
+        if (dados.length < 1) {
+            document.getElementById('container').innerHTML = 'Produtos não encontrados.'
+        } else {
+            console.log('aqui foi')
+            estrutura(titulo, dados)
+            window.location.href = './produtos.html'
+        }
+    } catch (erro) {
+        console.log("Erro ao realizar a requisição:", erro);
+    }
+}
+
 
 function carrossel(direcao, nomeDaClasse){
     let caixa = document.querySelector(nomeDaClasse)
@@ -29,8 +53,10 @@ function carrossel(direcao, nomeDaClasse){
 }
 
 function estrutura(title,lista){
+    console.log("entrou na estrutura")
     let container = document.getElementById('container');
-    container.innerHTML =   `<div id = 'caixa'>
+    console.log(container);
+    container.innerHTML = `<div id = 'caixa'>
                         <div id = 'titulo'><h1>${title}</h1></div>
                     <div>
                         <div id = 'cards_container'></div>
