@@ -40,6 +40,22 @@ app.get("/produtos/:categoria", async (req, res) => {
     }
 })
 
+app.get('/produtosBusca/:nome', async (req, res) => {
+    try{
+        const nome = req.params.nome;
+        const resultado = await mssql.query(`select * from daroca.produtos where nome = ${nome}`);
+        if (resultado.recordset.length >0){
+            res.send(resultado.recordset)
+        }
+        else{
+            res.send([])
+        }
+    }
+    catch(error){
+        res.status(404).json('Produto não encontrado.')
+    }
+})
+
 //rota principal
 app.listen(porta, () => console.log('API funcionando!'))
 

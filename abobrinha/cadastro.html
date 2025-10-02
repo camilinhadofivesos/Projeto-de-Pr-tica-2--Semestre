@@ -7,18 +7,13 @@
   <link rel="stylesheet" href="style_auth.css">
   <link rel="stylesheet" href="style_index.css">
   <script src="https://kit.fontawesome.com/7d8c9004fe.js" crossorigin="anonymous"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Sedan:ital@0;1&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
-
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Seaweed+Script&family=Sedan:ital@0;1&family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header id="cab"></header>
 
@@ -44,6 +39,44 @@
   </main>
 
   <footer id="rod"></footer>
-      <script src="./base.js"></script>
+
+  <script src="./base.js"></script>
+
+  <!-- SCRIPT PARA INTEGRAÇÃO COM A API -->
+  <script>
+    document.querySelector(".form-auth").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const senha = document.getElementById("senha").value;
+      const confirmar = document.getElementById("confirmar").value;
+
+      if (senha !== confirmar) {
+        alert("As senhas não coincidem!");
+        return;
+      }
+
+      try {
+        const resp = await fetch("http://localhost:3000/api/usuarios", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nome, email, senha })
+        });
+
+        const dados = await resp.json();
+
+        if (resp.ok) {
+          alert("Cadastro realizado com sucesso!");
+          window.location.href = "login.html";
+        } else {
+          alert("Erro: " + (dados.error || "Não foi possível cadastrar"));
+        }
+      } catch (erro) {
+        alert("Erro de conexão com o servidor");
+        console.error(erro);
+      }
+    });
+  </script>
 </body>
 </html>

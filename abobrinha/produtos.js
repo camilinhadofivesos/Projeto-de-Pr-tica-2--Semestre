@@ -10,7 +10,18 @@
 
 */
 
+document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const categoria = params.get("categoria");
+    const titulo = params.get("titulo");
 
+    if (categoria && titulo) {
+        API(categoria, titulo);
+    }
+    else{
+        console.log('Erro. Verifique se há parâmetros.')
+    }
+});
 
 
 async function API(categoria, titulo){
@@ -30,7 +41,6 @@ async function API(categoria, titulo){
         } else {
             console.log('aqui foi')
             estrutura(titulo, dados)
-            window.location.href = './produtos.html'
         }
     } catch (erro) {
         console.log("Erro ao realizar a requisição:", erro);
@@ -79,4 +89,24 @@ let card = '';
         card += `</div>`
     }
     document.getElementById(idDiv).innerHTML = card;
+}
+
+function buscar(){
+    let input = document.getElementById('campoBusca');
+    
+    //mostrar a ferramenta de busca
+    input.style.display = 'block'
+
+    input.addEventListener('keydown', function(event){
+        if (event.key === 'Enter'){
+            document.addEventListener('DOMContentLoaded', function(){
+                let valorDigitado = input.value;
+                fetch(`http://localhost:8080/produtosBusca/${valorDigitado}`)
+                .then(resp => resp.json())
+                .then(dados => {
+                    estrutura('Produtos encontrados', dados)
+                })
+            })
+        }
+    })
 }

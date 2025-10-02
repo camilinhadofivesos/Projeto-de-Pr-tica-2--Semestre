@@ -81,20 +81,22 @@ li:hover #categorias_produtos{
 }
 
 .link_categorias{
-    all: unset;  /* Resetando todos os estilos padrões do botão */
-    display: block;  /* Para fazer com que o botão se comporte como um link de bloco */
-    width: 100%;  /* Caso queira que o botão ocupe toda a largura disponível */
-    background-color: transparent;  /* Torna o fundo transparente */
-    border: none;  /* Remove a borda padrão */
-    cursor: pointer;  /* Faz o cursor ser uma mãozinha */
-    padding: 10px;  /* Alinha com o estilo do link */
+    all: unset;  
+    display: block;  
+    width: 100%; 
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer;  
+    padding: 10px;  
     font-family: var(--paragrafos);
+    color: var(--verde-militar);
+    transition: all 0.2s ease;
 }
 
 .link_categorias:hover{
-    background-color: var(--verde-musgo);  /* Mesmo estilo de hover */
+    background-color: var(--verde-musgo);  
     color: var(--vermelho-claro);
-      
+    transform: scale(1.05);
 }
 
 .btn_menu{

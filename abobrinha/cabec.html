@@ -7,22 +7,13 @@
             <ul class="menu">
                 <li><button class="btn_menu" onclick="window.location.href = 'index.html'">Início</button></li>
                 <li>
-                    <button class="btn_menu">Produtos</button>
-                        <div id="categorias_produtos">
-                            <button class="link_categorias" onclick="API(1, 'Frutas'); ">Frutas</button>
-                            <button class="link_categorias" onclick="API(2, 'Legumes');">Legumes</button>
-                            <button class="link_categorias" onclick="API(4, 'Verduras');">Verduras</button>
-                            <button class="link_categorias" onclick="API(3, 'Hortaliças');">Hortaliças</button>
-                            <!--  <div id="categorias_produtos">
-
-                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 1, 'Frutas');">Frutas</a>
-                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 2, 'Legumes');">Legumes</a>
-                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 4, 'Verduras');">Verduras</a>
-                            <a href='./produtos.html#' class="link_categorias" onclick="handleCategoriaClick(event, 3, 'Hortaliças');">Hortaliças</a>
-                            </div> 
-                            
-                            !-->
-                        </div>
+                <button class="btn_menu">Produtos</button>
+                    <div id="categorias_produtos">
+                        <button class="link_categorias" onclick="window.location.href='./produtos.html?categoria=1&titulo=Frutas'">Frutas</button>
+                        <button class="link_categorias" onclick="window.location.href='./produtos.html?categoria=2&titulo=Legumes'">Legumes</button>
+                        <button class="link_categorias" onclick="window.location.href='./produtos.html?categoria=4&titulo=Verduras'">Verduras</button>
+                        <button class="link_categorias" onclick="window.location.href='./produtos.html?categoria=3&titulo=Hortaliças'">Hortaliças</button>
+                    </div>
                 </li>
                 <li><button class="btn_menu" onclick="window.location.href = './comentarios.html'">Comentários</button></li>
                 <li><button class="btn_menu" onclick="window.location.href = './contato.html'">Contato</button></li>

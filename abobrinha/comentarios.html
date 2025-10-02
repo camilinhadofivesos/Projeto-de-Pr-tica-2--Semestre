@@ -45,8 +45,11 @@
 
       <button type="submit">Enviar</button>
     </form>
+
+    <!-- Aqui aparecerão os comentários da API -->
+    <div id="comentarios-api"></div>
   </main>
-  <div id="comentarios-api"></div>
+
   <!-- ====== FOOTER ====== -->
   <footer id="rod"></footer>
 
@@ -66,52 +69,53 @@
       }
 
       try {
-        const resp = await fetch("http://localhost:3000/comentarios", {
+        const resp = await fetch("http://localhost:3000/api/comentarios", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nome, email, tipo, mensagem, comentario: mensagem })
+          body: JSON.stringify({ nome, email, tipo, mensagem })
         });
 
         const dados = await resp.json();
         if (resp.ok) {
-  alert("Mensagem enviada com sucesso! Obrigado pelo seu feedback.");
-  console.log("Comentário salvo:", dados);
-  e.target.reset(); // limpa o formulário
-  // Atualiza a lista de comentários
-  fetch('http://localhost:3000/comentarios')
-    .then(res => res.json())
-    .then(comentarios => {
-      const div = document.getElementById('comentarios-api');
-      if (!comentarios.length) {
-        div.innerHTML = '<h2>Nenhum comentário ainda.</h2>';
-      } else {
-        div.innerHTML = '<h2>Comentários:</h2>' +
-          comentarios.map(c => `<p><b>${c.nome}</b>: ${c.mensagem}</p>`).join('');
-      }
-    });
-}
+          alert("Mensagem enviada com sucesso! Obrigado pelo seu feedback.");
+          console.log("Comentário salvo:", dados);
+          e.target.reset(); // Limpa o formulário
+
+          // Atualiza a lista de comentários
+          atualizarComentarios();
+        } else {
+          alert("Erro ao enviar a mensagem. Tente novamente.");
+        }
       } catch (erro) {
         alert("Erro de conexão com o servidor. Verifique se a API está rodando.");
         console.error(erro);
       }
     });
-  </script>
-  <script>
-fetch('http://localhost:3000/comentarios')
-  .then(res => res.json())
-  .then(comentarios => {
-    const div = document.getElementById('comentarios-api');
-    if (!comentarios.length) {
-      div.innerHTML = '<h2>Nenhum comentário ainda.</h2>';
-    } else {
-      div.innerHTML = '<h2>Comentários:</h2>' +
-        comentarios.map(c => `<p><b>${c.nome}</b>: ${c.mensagem}</p>`).join('');
+
+    // Função para atualizar os comentários exibidos
+    function atualizarComentarios() {
+      fetch('http://localhost:3000/api/comentarios')
+        .then(res => res.json())
+        .then(comentarios => {
+          const div = document.getElementById('comentarios-api');
+          if (!comentarios.length) {
+            div.innerHTML = '<h2>Nenhum comentário ainda.</h2>';
+          } else {
+            div.innerHTML = '<h2>Comentários:</h2>' +
+              comentarios.map(c => `
+                <p><b>${c.nome}</b> (${c.tipo}): ${c.mensagem}</p>
+              `).join('');
+          }
+        })
+        .catch(() => {
+          document.getElementById('comentarios-api').innerText = 'Não foi possível carregar os comentários.';
+        });
     }
-  })
-  .catch(() => {
-    document.getElementById('comentarios-api').innerText = 'Não foi possível carregar os comentários.';
-  });
-</script>
-<script src="./base.js"></script>
+
+    // Carregar os comentários assim que a página for aberta
+    atualizarComentarios();
+  </script>
+
+  <script src="./base.js"></script>
 </body>
 </html>

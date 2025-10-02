@@ -16,10 +16,3 @@ let cabecalho = document.getElementById('cab');
                 rodape.innerHTML = arquivo;
             })
 
-function buscar(){
-    let input = document.getElementById('campoBusca');
-
-    //mostrar a ferramenta de busca
-    input.style.display = 'block'
-    
-}
