@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
+const produtoRoutes = require('./routes/produtos');
 
 app.use(express.json());
 
@@ -19,6 +20,7 @@ app.use("/api/clientes", clientesRoutes);
 app.use("/api/usuarios", usuariosRoutes);
 app.use("/api/comentarios", comentariosRoutes);
 app.use("/api/contato", contatoRoutes);
+app.use('/produtos', produtoRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor funcionando!");

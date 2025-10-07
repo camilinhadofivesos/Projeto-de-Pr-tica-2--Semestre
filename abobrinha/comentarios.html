@@ -72,7 +72,7 @@
         const resp = await fetch("http://localhost:3000/api/comentarios", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nome, email, tipo, mensagem })
+          body: JSON.stringify({ nome, email, tipo, comentario })
         });
 
         const dados = await resp.json();
@@ -103,7 +103,7 @@
           } else {
             div.innerHTML = '<h2>Comentários:</h2>' +
               comentarios.map(c => `
-                <p><b>${c.nome}</b> (${c.tipo}): ${c.mensagem}</p>
+                <p><b>${c.nome}</b> (${c.tipo}): ${c.comentario}</p>
               `).join('');
           }
         })

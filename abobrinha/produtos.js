@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function API(categoria, titulo){
-    const url = `http://localhost:8080/produtos/${categoria}`;
+    const url = `http://localhost:3000/produtos/${categoria}`;
     
     try {
         const response = await fetch(url);
