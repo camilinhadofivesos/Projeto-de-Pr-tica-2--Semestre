@@ -1,22 +1,21 @@
 const produtoModel = require('../models/produtosModels');
 
-
-//busca pela categoria selecionada
-async function listar(req, res)  {
-    try{
+async function listar(req, res) {    
+    try {
         const categoria = parseInt(req.params.categoria);
-        const result = await produtoModel.listarProdutos(categoria);
-        if (result.recordset.length > 0){
-            res.json(result);
+        const produtos = await produtoModel.listarProdutos(categoria);
+
+        if (produtos) {
+            res.json(produtos);
+        } else {
+            res.json([]);
         }
-        else{
-            res.send([])
-        }
-    }
-    catch(error){
-        res.status(400).json('Erro.', error)
+
+    } catch (error) {
+        console.error(error); 
     }
 }
+
 
 /*app.get('/produtosBusca/:nome', async (req, res) => {
     try{

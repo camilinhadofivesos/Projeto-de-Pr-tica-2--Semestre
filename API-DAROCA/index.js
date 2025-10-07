@@ -3,9 +3,11 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
-const produtoRoutes = require('./routes/produtos');
+const cors = require('cors');
+const { conectaBD } = require("./db");
 
 app.use(express.json());
+app.use(cors({ origin : "*"}));
 
 // Rotas existentes
 const clientesRoutes = require("./routes/clientes");
@@ -14,6 +16,7 @@ const usuariosRoutes = require("./routes/usuarios");
 // Rotas novas
 const comentariosRoutes = require("./routes/comentarios");
 const contatoRoutes = require("./routes/contato");
+const produtoRoutes = require('./routes/produtosRoutes');
 
 // Usar as rotas com prefixo "/api"
 app.use("/api/clientes", clientesRoutes);
@@ -21,11 +24,14 @@ app.use("/api/usuarios", usuariosRoutes);
 app.use("/api/comentarios", comentariosRoutes);
 app.use("/api/contato", contatoRoutes);
 app.use('/produtos', produtoRoutes);
+console.log('app.use foi')
 
 app.get("/", (req, res) => {
-  res.send("Servidor funcionando!");
+  res.json({mensagem : "Servidor funcionando!"});
 });
 
+
+conectaBD();
 app.listen(port, () => {
-  console.log(`Servidor rodando em http://localhost:${port}`);
+  console.log(`Servidor rodando na porta ${port}`);
 });

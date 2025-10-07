@@ -1,15 +1,3 @@
-/*function handleCategoriaClick(event, categoria, titulo) {
-    event.preventDefault();  // Impede a navegação do link
-
-    // Chama a API e espera a resposta
-    API(categoria, titulo).then(() => {
-        // Depois que a API terminar, você pode navegar
-        window.location.href = './produtos.html';
-    });
-}
-
-*/
-
 document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const categoria = params.get("categoria");
@@ -26,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function API(categoria, titulo){
     const url = `http://localhost:3000/produtos/${categoria}`;
+    console.log('chegou na função')
     
     try {
         const response = await fetch(url);
