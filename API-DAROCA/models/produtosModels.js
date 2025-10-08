@@ -12,4 +12,5 @@ async function listarProdutos(categoria) {
     }
 }
 
+
 module.exports = { listarProdutos };

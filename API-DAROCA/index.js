@@ -17,6 +17,7 @@ const usuariosRoutes = require("./routes/usuarios");
 const comentariosRoutes = require("./routes/comentarios");
 const contatoRoutes = require("./routes/contato");
 const produtoRoutes = require('./routes/produtosRoutes');
+const produtosBusca = require('./routes/produtosBusca');
 
 // Usar as rotas com prefixo "/api"
 app.use("/api/clientes", clientesRoutes);
@@ -24,7 +25,7 @@ app.use("/api/usuarios", usuariosRoutes);
 app.use("/api/comentarios", comentariosRoutes);
 app.use("/api/contato", contatoRoutes);
 app.use('/produtos', produtoRoutes);
-console.log('app.use foi')
+app.use('/produtosBusca', produtosBusca);
 
 app.get("/", (req, res) => {
   res.json({mensagem : "Servidor funcionando!"});

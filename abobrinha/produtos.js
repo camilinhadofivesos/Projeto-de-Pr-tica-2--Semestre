@@ -20,7 +20,7 @@ async function API(categoria, titulo){
         const response = await fetch(url);
        
          if (!response.ok) {
-            throw new Error(`Erro na resposta da API: ${response.statusText}`);
+            console.log('Erro na resposta')
         }
         console.log(response)
         const dados = await response.json();
@@ -80,22 +80,24 @@ let card = '';
     document.getElementById(idDiv).innerHTML = card;
 }
 
-function buscar(){
+function buscar() {
     let input = document.getElementById('campoBusca');
-    
-    //mostrar a ferramenta de busca
-    input.style.display = 'block'
 
-    input.addEventListener('keydown', function(event){
-        if (event.key === 'Enter'){
-            document.addEventListener('DOMContentLoaded', function(){
-                let valorDigitado = input.value;
-                fetch(`http://localhost:8080/produtosBusca/${valorDigitado}`)
+    // Mostrar a ferramenta de busca
+    input.style.display = 'block';
+
+    input.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            let valorDigitado = input.value;
+
+            fetch(`http://localhost:3000/produtosBusca/${valorDigitado}`)
                 .then(resp => resp.json())
                 .then(dados => {
-                    estrutura('Produtos encontrados', dados)
+                    estrutura('Produtos encontrados', dados);
                 })
-            })
+                .catch(erro => {
+                    console.error('Erro ao buscar produtos:', erro);
+                });
         }
-    })
+    });
 }
